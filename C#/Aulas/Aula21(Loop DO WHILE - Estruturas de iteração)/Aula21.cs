@@ -1,6 +1,6 @@
 using System;
 
-class Aula20{
+class Aula21{
     static void Main(){
 
         int num=5;
