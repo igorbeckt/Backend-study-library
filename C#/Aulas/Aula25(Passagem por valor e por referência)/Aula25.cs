@@ -1,6 +1,6 @@
 using System;
 
-class Aula24{
+class Aula25{
     
     static void Main(){
         int num=50;

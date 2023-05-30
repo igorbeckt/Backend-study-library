@@ -1,6 +1,6 @@
 using System;
 
-class Aula24{
+class Aula26{
     
     static void Main(){
         int divid,divis,quoc,rest;
