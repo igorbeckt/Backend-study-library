@@ -10,7 +10,7 @@ Neste repositório, você encontrará diversos projetos e aulas para aprender e 
 
 O repositório está organizado da seguinte maneira:
 
-```ruby
+```
 Back-end/
 └── C#/
 ├── Aulas/
