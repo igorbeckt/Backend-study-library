@@ -58,7 +58,7 @@ A soma dos 2 valores é: 15
 
 ## Autor
 
-Nome: Igor Nascimento
+Nome: Igor Nascimento                                                                                                                           
 Email: igorbeckt@hotmail.com
 
 
