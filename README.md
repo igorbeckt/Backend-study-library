@@ -18,6 +18,8 @@ Back-end/
 │ ├── Aula02/
 │ ├── Aula03(Variáveis)/
 │ ├── Aula04(Escopo de variáveis)/
+│ ├── Aula05(Operadores e Operações)/
+│ ├── Aula06(Formatando a saída no console)/
 │ └── ...
 └── Projetos/
 ├── Calculator/
