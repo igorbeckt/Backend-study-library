@@ -20,20 +20,16 @@
     - [Aula17(Array-Vetor)](https://github.com/igorbeckt/Back-end/tree/main/C%23/Aulas/Aula17(Array-Vetor))
     - [Aula18(Matrizes-Vetores Bidimensionais)](https://github.com/igorbeckt/Back-end/tree/main/C%23/Aulas/Aula18(Matrizes-Vetores%20Bidimensionais))
     - [Aula19(Loop for - Estruturas de iteração)](https://github.com/igorbeckt/Back-end/tree/main/C%23/Aulas/Aula19(Loop%20for%20-%20Estruturas%20de%20itera%C3%A7%C3%A3o))
-    -[Aula20(Loop While - Estruturas de iteração)](https://github.com/igorbeckt/Back-end/tree/main/C%23/Aulas/Aula20(Loop%20While%20-%20Estruturas%20de%20itera%C3%A7%C3%A3o))
-    -[Aula21(Loop DO WHILE - Estruturas de iteração)](https://github.com/igorbeckt/Back-end/tree/main/C%23/Aulas/Aula21(Loop%20DO%20WHILE%20-%20Estruturas%20de%20itera%C3%A7%C3%A3o))
-    -[Aula22(Loop Foreach - Estruturas de iteração)](https://github.com/igorbeckt/Back-end/tree/main/C%23/Aulas/Aula22(Loop%20Foreach%20-%20Estruturas%20de%20itera%C3%A7%C3%A3o))
-    -[Aula23(Métodos para Arrays)](https://github.com/igorbeckt/Back-end/tree/main/C%23/Aulas/Aula23(M%C3%A9todos%20para%20Arrays))
-    -[Aula24(Métodos)](https://github.com/igorbeckt/Back-end/tree/main/C%23/Aulas/Aula24(M%C3%A9todos))
-    -[Aula25(Passagem por valor e por referência)](https://github.com/igorbeckt/Back-end/tree/main/C%23/Aulas/Aula25(Passagem%20por%20valor%20e%20por%20refer%C3%AAncia))
+    - [Aula20(Loop While - Estruturas de iteração)](https://github.com/igorbeckt/Back-end/tree/main/C%23/Aulas/Aula20(Loop%20While%20-%20Estruturas%20de%20itera%C3%A7%C3%A3o))
+    - [Aula21(Loop DO WHILE - Estruturas de iteração)](https://github.com/igorbeckt/Back-end/tree/main/C%23/Aulas/Aula21(Loop%20DO%20WHILE%20-%20Estruturas%20de%20itera%C3%A7%C3%A3o))
+    - [Aula22(Loop Foreach - Estruturas de iteração)](https://github.com/igorbeckt/Back-end/tree/main/C%23/Aulas/Aula22(Loop%20Foreach%20-%20Estruturas%20de%20itera%C3%A7%C3%A3o))
+    - [Aula23(Métodos para Arrays)](https://github.com/igorbeckt/Back-end/tree/main/C%23/Aulas/Aula23(M%C3%A9todos%20para%20Arrays))
+    - [Aula24(Métodos)](https://github.com/igorbeckt/Back-end/tree/main/C%23/Aulas/Aula24(M%C3%A9todos))
+    - [Aula25(Passagem por valor e por referência)](https://github.com/igorbeckt/Back-end/tree/main/C%23/Aulas/Aula25(Passagem%20por%20valor%20e%20por%20refer%C3%AAncia))
     - [Aula26(Argumento Out)](https://github.com/igorbeckt/Back-end/tree/main/C%23/Aulas/Aula26(Argumento%20Out))
     - [Aula27(Argumento Params)](https://github.com/igorbeckt/Back-end/tree/main/C%23/Aulas/Aula27(Argumento%20Params))
     - [Aula28(Classes e Objetos)](https://github.com/igorbeckt/Back-end/tree/main/C%23/Aulas/Aula28(Classes%20e%20Objetos))
-    - [Aula29(Construtores e Destrutores)](https://github.com/igorbeckt/Back-end/tree/main/C%23/Aulas/Aula29(Construtores%20e%20Destrutores))
-    - ...
+    - [Aula29(Construtores e Destrutores)](https://github.com/igorbeckt/Back-end/tree/main/C%23/Aulas/Aula29(Construtores%20e%20Destrutores))      
     
 - [Projetos](https://github.com/igorbeckt/Back-end/tree/main/C%23/Projetos/Calculator)
     - [Calculator](https://github.com/igorbeckt/Back-end/tree/main/C%23/Projetos/Calculator)
-    - ...
-
-
