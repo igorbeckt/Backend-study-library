@@ -29,7 +29,7 @@ Back-end/
 - A pasta "Projetos" contém exemplos de projetos que desenvolvi em C#. Cada projeto tem sua própria pasta e contém uma breve descrição, instruções de execução e uso, além de outros detalhes relevantes.
 
 
-## Como Usar
+##
 
 Você pode explorar os projetos e aulas deste repositório para aprender e aprimorar suas habilidades em desenvolvimento back-end com C#. Cada pasta tem seu próprio conteúdo e pode ser acessada individualmente.
 
