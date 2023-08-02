@@ -1,6 +1,6 @@
 <h1 align="center">Back-end</h1>
 
-Bem-vindo ao repositório "Back-end"! Aqui você encontrará materiais aulas e projetos relacionados ao desenvolvimento de aplicações usando a linguagem de programação C#.
+Bem-vindo(a) a minha biblioteca pessoal! Aqui você encontrará materiais aulas e projetos relacionados ao desenvolvimento de aplicações back-end usando a linguagem de programação C#.
 
 ## Sobre
 
