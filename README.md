@@ -1,10 +1,10 @@
 <h1 align="center">Back-end</h1>
 
-Bem-vindo(a) a minha biblioteca pessoal! Aqui você encontrará materiais aulas e projetos relacionados ao desenvolvimento de aplicações back-end usando a linguagem de programação C#.
+Bem-vindo(a) a minha biblioteca pessoal! Aqui você encontrará aulas e projetos relacionados ao desenvolvimento de aplicações back-end.
 
 ## Sobre
 
-Neste repositório, você encontrará diversos projetos e aulas para aprender e praticar conceitos e técnicas de desenvolvimento back-end. Os projetos são exemplos práticos e aplicativos reais, enquanto as aulas são materiais teóricos e práticos para auxiliar no aprendizado.
+Neste repositório, você encontrará diversas aulas e projetos para aprender e praticar conceitos e técnicas de desenvolvimento back-end. Os projetos são exemplos práticos e aplicativos reais, enquanto as aulas são materiais teóricos e práticos para auxiliar no aprendizado.
 
 ## Estrutura
 
