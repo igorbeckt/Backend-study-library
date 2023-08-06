@@ -24,6 +24,7 @@ Back-end/
 └── Projetos/
 ├── Calculator/
 ├── Stopwatch/
+├── TextEditor/
 └── ...
  ```
 
