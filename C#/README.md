@@ -3,6 +3,7 @@
 - [Projetos](https://github.com/igorbeckt/Back-end/tree/main/C%23/Projetos/Calculator)
     - [Calculator](https://github.com/igorbeckt/Back-end/tree/main/C%23/Projetos/Calculator)
     - [Stopwatch](https://github.com/igorbeckt/Back-end/tree/main/C%23/Projetos/Stopwatch)
+    - [TextEditor](https://github.com/igorbeckt/Back-end/tree/main/C%23/Projetos/TextEditor)
 - [Aulas](https://github.com/igorbeckt/Back-end/tree/main/C%23/Aulas)
     - [Aula1](https://github.com/igorbeckt/Back-end/tree/main/C%23/Aulas/Aula01)
     - [Aula2](https://github.com/igorbeckt/Back-end/tree/main/C%23/Aulas/Aula02)
