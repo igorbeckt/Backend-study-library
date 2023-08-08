@@ -20,7 +20,7 @@
 
 5. Após a exibição do resultado, você será redirecionado ao menu para escolher outra operação ou sair do programa.
 
-## Exemplo de uso
+## Exemplo:
 ```
 O que você deseja calcular?
 1 - soma
