@@ -20,8 +20,8 @@
 
 5. Após a exibição do resultado, você será redirecionado ao menu para escolher outra operação ou sair do programa.
 
-
-```ruby
+## Exemplo de uso
+```
 O que você deseja calcular?
 1 - soma
 2 - subtração
@@ -30,6 +30,8 @@ O que você deseja calcular?
 5 - sair
 ----------------------
 Selecione uma opção: 1
+```
+```
 Primeiro valor: 10
 Segundo valor: 5
 
