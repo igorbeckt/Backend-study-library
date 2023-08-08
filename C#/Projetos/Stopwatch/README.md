@@ -1,5 +1,5 @@
 <h1 align="center">Cronômetro</h1>
-<p align="center"><i>O projeto "Stopwatch" contém um projeto C# que implementa um cronômetro (stopwatch) de console simples para medir o tempo decorrido entre eventos.</i></p>
+<p align="center"><i>O projeto "Stopwatch" implementa um cronômetro (stopwatch) de console simples para medir o tempo decorrido entre eventos.</i></p>
 
 ## Funcionalidades
 
