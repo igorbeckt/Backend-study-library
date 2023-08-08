@@ -15,7 +15,7 @@
 2. Abra o projeto em sua IDE preferida que suporte C#.
 3. Compile o projeto e execute o aplicativo.
 
-
+## Exemplo:
 ```
 O que deseja fazer?
 1 - abrir arquivo
