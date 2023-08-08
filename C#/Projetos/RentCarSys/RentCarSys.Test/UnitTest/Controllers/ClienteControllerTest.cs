@@ -1,0 +1,11 @@
+namespace RentCarSys.Test.UnitTest.Controllers
+{
+    public class UnitTest1
+    {
+        [Fact]
+        public void Test1()
+        {
+
+        }
+    }
+}
