@@ -26,14 +26,16 @@ M = minutos => 1m = 1 minuto
 6. Para sair do cronômetro, digite "0s" no menu principal e pressione Enter.
 
 
-```ruby
+```
 S = segundos => 10s = 10 segundos
 M = minutos => 1m = 1 minuto
 0s = sair
+---------------------------------------
 Quanto tempo deseja contar?
 ---------------------------------------
 Resposta: 1M
----------------------------------------
+```
+```
 Ready...
 Set...
 Go...!
