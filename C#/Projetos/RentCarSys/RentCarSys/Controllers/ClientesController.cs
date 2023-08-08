@@ -4,6 +4,7 @@ using Localdorateste.Data;
 using Localdorateste.Models;
 using Localdorateste.ViewModels;
 using Localdorateste.Extensions;
+using RentCarSys.Enums;
 
 namespace Localdorateste.Controllers
 {
@@ -92,7 +93,7 @@ namespace Localdorateste.Controllers
             {
                 var cliente = new Cliente
                 {
-                    StatusCliente = "Disponivel",
+                    Status = ClienteStatus.Online,
                     NomeCompleto = model.NomeCompleto,
                     Email = model.Email,
                     RG = model.RG,
@@ -136,7 +137,7 @@ namespace Localdorateste.Controllers
                     return NotFound(new ResultViewModel<Cliente>(erro: "Cliente não encontrado!"));
                 // Validação do cliente
 
-                if (cliente.StatusCliente == "Ocupado")
+                if (cliente.Status == ClienteStatus.Online)
                     return NotFound(new ResultViewModel<Cliente>(erro: "Não foi possivel alterar o cliente,possui reserva em andamento"));
                 // Validação para saber se o cliente não tem uma reserva em andamento
 
@@ -177,7 +178,7 @@ namespace Localdorateste.Controllers
                     return NotFound(new ResultViewModel<Cliente>(erro: "Cliente não encontrado!"));
                 // Validação do cliente
 
-                if (cliente.StatusCliente == "Ocupado")
+                if (cliente.Status == ClienteStatus.Offline)
                     return NotFound(new ResultViewModel<Cliente>(erro: "Não foi possivel excluir o cliente,possui reserva em andamento"));
                 // Validação para saber se o cliente não tem uma reserva em andamento
 

@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 namespace Localdorateste.Controllers
 {
 
-    [ApiController]
+    /*[ApiController]
     [Route("/v1/oficina")]
     public class OficinasController : ControllerBase
     {
@@ -209,5 +209,5 @@ namespace Localdorateste.Controllers
         }
 
 
-    }
+    }*/
 }

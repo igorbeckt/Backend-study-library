@@ -5,6 +5,7 @@ using Localdorateste.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualBasic;
+using RentCarSys.Enums;
 using System.Runtime.ConstrainedExecution;
 
 namespace Localdorateste.Controllers
@@ -84,11 +85,11 @@ namespace Localdorateste.Controllers
                     return NotFound(new ResultViewModel<Reserva>(erro: "Veiculo não encontrado, insira um veiculo cadastrado!"));
                 // Validação do veiculo
 
-                if (cliente.StatusCliente == "Ocupado")
+                if (cliente.Status == ClienteStatus.Offline)
                     return NotFound(new ResultViewModel<Reserva>(erro: "Não foi possivel alterar o cliente,possui reserva em andamento"));
                 // Validação para saber se o cliente não tem uma reserva em andamento
 
-                if (veiculo.StatusVeiculo == "Ocupado")
+                if (cliente.Status == ClienteStatus.Offline)
                     return NotFound(new ResultViewModel<Reserva>(erro: "Não foi possivel alterar o veiculo, possui reserva em andamento"));
                 // Validação para saber se o veiculo já foi alugado
 
@@ -96,7 +97,7 @@ namespace Localdorateste.Controllers
                 var reserva = new Reserva                
                 
                     {
-                        StatusReserva = "Livre",
+                        Status = ReservaStatus.Online,
                         ClienteId = cliente.ClienteId,
                         NomeCompleto = cliente.NomeCompleto,
                         CPF = cliente.CPF,
@@ -145,7 +146,7 @@ namespace Localdorateste.Controllers
                     return NotFound(new ResultViewModel<Reserva>(erro: "Reserva não encontrada!"));
                 // Validação da reserva
 
-                if (reserva.StatusReserva == "Feita")
+                /*if (reserva.StatusReserva == "Feita")
                     return NotFound(new ResultViewModel<Reserva>(erro: "Não foi possivel alterar a reserva, possui um contrato em aberto!"));
                 // Validação para saber se a reserva está contrato em aberto
 
@@ -155,7 +156,7 @@ namespace Localdorateste.Controllers
 
                 if (reserva.StatusReserva == "Finalizado")
                     return NotFound(new ResultViewModel<Reserva>(erro: "Não é possivel alterar uma reserva finalizada!"));
-                // Validação para saber se a reserva foi finalizada
+                // Validação para saber se a reserva foi finalizada*/
 
 
                 reserva.DataRetirada = model.DataRetirada;
@@ -195,7 +196,7 @@ namespace Localdorateste.Controllers
                     return NotFound(new ResultViewModel<Reserva>(erro: "Reserva não encontrada, verifique se reserva foi cadastrada!"));
                 // Validação da reserva
 
-                if (reserva.StatusReserva == "Pago")
+                /*if (reserva.StatusReserva == "Pago")
                     return NotFound(new ResultViewModel<Reserva>(erro: "Não foi possivel alterar a reserva, possui um contrato em aberto!"));
                 // Validação para saber se a reserva está contrato em aberto
 
@@ -205,7 +206,7 @@ namespace Localdorateste.Controllers
 
                 if (reserva.StatusReserva == "Finalizado")
                     return NotFound(new ResultViewModel<Reserva>(erro: "Não é possivel alterar uma reserva finalizada!"));
-                // Validação para saber se a reserva foi finalizada
+                // Validação para saber se a reserva foi finalizada*/
 
                 context.Reservas.Remove(reserva);
                 await context.SaveChangesAsync(); 

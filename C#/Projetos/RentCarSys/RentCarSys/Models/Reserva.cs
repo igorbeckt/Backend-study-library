@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using RentCarSys.Enums;
 using System.Collections.Generic;
 using System.Numerics;
 
@@ -7,7 +8,7 @@ namespace Localdorateste.Models
     public class Reserva
     {
         public int ReservaId { get; set; }
-        public string StatusReserva { get; set; }
+        public ReservaStatus Status { get; set; }
         public int ClienteId { get; set; }
         public string NomeCompleto { get; set; }
         public long CPF { get; set; }
@@ -16,10 +17,9 @@ namespace Localdorateste.Models
         public string Marca { get; set; }
         public string Modelo { get; set; }        
         public string DataReserva { get; set; }
-        public long ValorLocacao { get; set; }
+        public double ValorLocacao { get; set; }
         public string DataRetirada { get; set; }
-        public string DataEntrega { get; set; }              
-                            
+        public string DataEntrega { get; set; }                           
     }
 
 }

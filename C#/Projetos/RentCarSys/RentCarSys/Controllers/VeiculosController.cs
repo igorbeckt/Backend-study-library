@@ -4,6 +4,7 @@ using Localdorateste.Models;
 using Localdorateste.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using RentCarSys.Enums;
 using System.Runtime.ConstrainedExecution;
 
 namespace Localdorateste.Controllers
@@ -94,7 +95,7 @@ namespace Localdorateste.Controllers
             {
                 var veiculo = new Veiculo
                 {
-                    StatusVeiculo = "Disponivel",
+                    Status = VeiculoStatus.Online,
                     Placa = model.Placa,
                     Marca = model.Marca,
                     Modelo = model.Modelo,
@@ -147,7 +148,7 @@ namespace Localdorateste.Controllers
                     return NotFound(new ResultViewModel<Veiculo>(erro: "Veiculo não encontrado!"));
                 // Validação do veiculo
 
-                if (veiculo.StatusVeiculo == "Ocupado")
+                if (veiculo.Status == VeiculoStatus.Offline)
                     return NotFound(new ResultViewModel<Veiculo>(erro: "Não foi possivel alterar o veiculo, possui reserva em andamento"));
                 // Validação para saber se o veiculo já foi alugado
 
@@ -197,7 +198,7 @@ namespace Localdorateste.Controllers
                     return NotFound(new ResultViewModel<Veiculo>(erro: "Veiculo não encontrado!"));
                 // Validação de veiculo
 
-                if (veiculo.StatusVeiculo == "Ocupado")
+                if (veiculo.Status == VeiculoStatus.Offline)
                     return NotFound(new ResultViewModel<Veiculo>(erro: "Não foi possivel excluir o veiculo, o veiculo está alugado!"));
                 // Validação para saber se o veiculo está disponivel.
 

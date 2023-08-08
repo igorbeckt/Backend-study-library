@@ -4,10 +4,11 @@ using Localdorateste.Models;
 using Localdorateste.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using RentCarSys.Enums;
 
 namespace Localdorateste.Controllers
 {
-    [ApiController]
+    /*[ApiController]
     [Route("/v1/contratos")]
     public class ContratosController : ControllerBase
     {
@@ -73,19 +74,19 @@ namespace Localdorateste.Controllers
                     return NotFound(new ResultViewModel<Contrato>(erro: "Reserva não encontrada, insira uma reserva cadastrada!"));
                 // Validação da Reserva
 
-                if (reserva.StatusReserva == "Pago")
+                if (reserva.Status == ReservaStatus.Online)
                     return NotFound(new ResultViewModel<Contrato>(erro: "Não foi possivel criar o contrato, a reserva já tem um contrato feito!"));
                 // Validação para saber se a reserva está contrato em aberto
 
-                if (reserva.StatusReserva == "Em Andamento")
+                if (reserva.Status == ReservaStatus.Running)
                     return NotFound(new ResultViewModel<Contrato>(erro: "Não foi possivel criar o contrato, a reserva está em andamento!"));
                 // Validação para saber se a reserva está andamento
 
-                if (reserva.StatusReserva == "Finalizado")
+                if (reserva.Status == ReservaStatus.Offline)
                     return NotFound(new ResultViewModel<Contrato>(erro: "Não é possivel criar o contrato, a reserva já foi finalizada!"));
                 // Validação para saber se a reserva foi finalizada
 
-                reserva.StatusReserva = "Pago";
+                reserva.Status = ReservaStatus.Online ;
                 context.Reservas.Update(reserva);
                 await context.SaveChangesAsync();
                 // Alteração do status da reserva após o pagamento do contrato
@@ -244,5 +245,5 @@ namespace Localdorateste.Controllers
         }
 
 
-    }
+    }*/
 }

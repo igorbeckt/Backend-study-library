@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using RentCarSys.Enums;
 
 namespace Localdorateste.Models
 {
@@ -6,7 +7,7 @@ namespace Localdorateste.Models
     public class Veiculo
     {
         public int VeiculoId { get; set; }
-        public string StatusVeiculo { get; set; }
+        public VeiculoStatus Status { get; set; }
         public string Placa { get; set; }
         public string Marca { get; set; }
         public string Modelo { get; set; }
