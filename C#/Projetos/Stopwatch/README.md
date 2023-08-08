@@ -25,7 +25,7 @@ M = minutos => 1m = 1 minuto
     
 6. Para sair do cronômetro, digite "0s" no menu principal e pressione Enter.
 
-
+## Exemplo:
 ```
 S = segundos => 10s = 10 segundos
 M = minutos => 1m = 1 minuto
