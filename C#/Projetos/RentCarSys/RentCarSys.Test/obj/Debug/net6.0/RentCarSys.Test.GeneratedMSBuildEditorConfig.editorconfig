@@ -1,7 +1,4 @@
 is_global = true
-build_property.DesignTimeBuild = true
-build_property.MSBuildProjectFullPath = C:\Users\igorb\Documents\Projetos\Back-end\C#\Projetos\RentCarSys\RentCarSys.Test\RentCarSys.Test.csproj
-build_property.DebugSponsorLink = 
 build_property.TargetFramework = net6.0
 build_property.TargetPlatformMinVersion = 
 build_property.UsingMicrosoftNETSdkWeb = 
