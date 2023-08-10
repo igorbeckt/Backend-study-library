@@ -27,22 +27,7 @@ namespace Localdorateste.ViewModels
         [Required(ErrorMessage = "A cor é obrigatório!")]
         public string Cor { get; set; }
 
-        [Required(ErrorMessage = "A condição é obrigatório!")]
-        public int Condicao { get; set; }
-
-        [Required(ErrorMessage = "O vidro é obrigatório!")]
-        public string VidroEletrico { get; set; }
-
-        [Required(ErrorMessage = "A trava eletrica é obrigatório!")]
-        public string TravaEletrica { get; set; }
-
         [Required(ErrorMessage = "O tipo é obrigatório!")]
         public string Automatico { get; set; }
-
-        [Required(ErrorMessage = "O Ar-condicionado é obrigatório!")]
-        public string ArCondicionado { get; set; }
-
-        [Required(ErrorMessage = "A direção hidraulica é obrigatório!")]
-        public string DirecaoHidraulica { get; set; }
     }
 }

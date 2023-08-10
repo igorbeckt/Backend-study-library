@@ -7,8 +7,8 @@ namespace RentCarSys.Enums
         [EnumMember(Value = "Online")]
         Online = 1,
         [EnumMember(Value = "Running")]
-        Running = 1,
+        Running = 2,
         [EnumMember(Value = "Offline")]
-        Offline = 1,
+        Offline = 3,
     }
 }

@@ -21,7 +21,7 @@ namespace RentCarSys.Application.Repository
 
         public async Task<Cliente> ObterClientePorIdAsync(int clienteId)
         {
-            return await _contexto.Clientes.FirstOrDefaultAsync(x => x.ClienteId == clienteId);
+            return await _contexto.Clientes.FirstOrDefaultAsync(x => x.Id == clienteId);
         }
 
         public async Task<Cliente> ObterClientePorCPFAsync(long cpf)

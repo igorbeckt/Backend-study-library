@@ -8,7 +8,7 @@ using RentCarSys.Enums;
 namespace RentCarSys.Application.Services
 {
     [ApiController]
-    [Route("/v1/clientes")]
+    [Route("/clientes")]
     public class ClienteService : ControllerBase
     {
         private readonly IClientesRepository _repositorioClientes;
@@ -18,7 +18,7 @@ namespace RentCarSys.Application.Services
             _repositorioClientes = repositorioClientes;
         }
 
-        [HttpGet]
+        [HttpGet("buscarTodos")]
         public async Task<IActionResult> BuscarClientes()
         {
             try
@@ -32,7 +32,7 @@ namespace RentCarSys.Application.Services
             }
         }
 
-        [HttpGet("{clienteid:int}")]
+        [HttpGet("buscarPorId/{clienteid:int}")]
         public async Task<IActionResult> BuscarClientesId
         ([FromRoute] int clienteid)
         {
@@ -52,7 +52,7 @@ namespace RentCarSys.Application.Services
             }
         }
 
-        [HttpGet("{cpf}")]
+        [HttpGet("buscarPorCpf/{cpf}")]
         public async Task<IActionResult> BuscarClientesCPF
         ([FromRoute] long cpf)
         {
@@ -72,7 +72,7 @@ namespace RentCarSys.Application.Services
             }
         }
 
-        [HttpPost]
+        [HttpPost("cadastrar")]
         public async Task<IActionResult> CriarClientes
         ([FromBody] EditorClienteViewModel model)
         {
@@ -94,7 +94,7 @@ namespace RentCarSys.Application.Services
 
                 await _repositorioClientes.AdicionarClienteAsync(cliente);
 
-                return Created($"v1/clientes/{cliente.ClienteId}", new ResultViewModel<Cliente>(cliente));
+                return Created($"v1/clientes/{cliente.Id}", new ResultViewModel<Cliente>(cliente));
             }
             catch
             {
@@ -102,7 +102,7 @@ namespace RentCarSys.Application.Services
             }
         }
 
-        [HttpPut("{clienteid:int}")]
+        [HttpPut("alterar/{clienteid:int}")]
         public async Task<IActionResult> EditarClientes
             ([FromRoute] int clienteid, 
             [FromBody] EditorClienteViewModel model)
@@ -120,7 +120,7 @@ namespace RentCarSys.Application.Services
                     return NotFound(new ResultViewModel<Cliente>(erro: "Cliente não encontrado!"));
                 }
 
-                if (cliente.Status == ClienteStatus.Online)
+                if (cliente.Status == ClienteStatus.Running)
                 {
                     return NotFound(new ResultViewModel<Cliente>(erro: "Não foi possível alterar o cliente, possui reserva em andamento"));
                 }
@@ -140,7 +140,7 @@ namespace RentCarSys.Application.Services
             }
         }
 
-        [HttpDelete("{clienteid:int}")]
+        [HttpDelete("excluir/{clienteid:int}")]
         public async Task<IActionResult> ExcluirClientes([FromRoute] int clienteid)
         {
             try
@@ -151,7 +151,7 @@ namespace RentCarSys.Application.Services
                     return NotFound(new ResultViewModel<Cliente>(erro: "Cliente não encontrado!"));
                 }
 
-                if (cliente.Status == ClienteStatus.Offline)
+                if (cliente.Status == ClienteStatus.Running)
                 {
                     return NotFound(new ResultViewModel<Cliente>(erro: "Não foi possível excluir o cliente, possui reserva em andamento"));
                 }

@@ -14,6 +14,9 @@ builder.Services.AddControllers().ConfigureApiBehaviorOptions(options =>
 
 //builder.Services.AddScoped(typeof(IRepository<>), typeof(BaseRepository<>));
 builder.Services.AddScoped<IClientesRepository, ClientesRepository>();
+builder.Services.AddScoped<IVeiculosRepository, VeiculosRepository>();
+builder.Services.AddScoped<IReservasRepository, ReservasRepository>();
+
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

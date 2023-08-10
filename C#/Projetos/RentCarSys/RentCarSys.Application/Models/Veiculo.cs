@@ -3,10 +3,10 @@ using RentCarSys.Enums;
 
 namespace Localdorateste.Models
 {
-    [PrimaryKey(nameof(VeiculoId))]
+    
     public class Veiculo
     {
-        public int VeiculoId { get; set; }
+        public int Id { get; set; }
         public VeiculoStatus Status { get; set; }
         public string Placa { get; set; }
         public string Marca { get; set; }
@@ -15,12 +15,10 @@ namespace Localdorateste.Models
         public string KM { get; set; }
         public int QuantidadePortas { get; set; }
         public string Cor { get; set; }
-        public int Condicao { get; set; }
-        public string VidroEletrico { get; set; }
-        public string TravaEletrica { get; set; }
         public string Automatico { get; set; }
-        public string ArCondicionado { get; set; }
-        public string DirecaoHidraulica { get; set; }
+
+        public int? ReservaId { get; set; }
+        public virtual Reserva? Reserva { get; set; }
  
     }
 }
