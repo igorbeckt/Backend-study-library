@@ -16,7 +16,8 @@ namespace RentCarSys.Application.Repository
 
         public async Task<List<Reserva>> ObterTodasReservasAsync()
         {
-            return await _contexto.Reservas.ToListAsync();
+
+            return await _contexto.Reservas.Include(x => x.Cliente).Include(x => x.Veiculo).ToListAsync();
         }
 
         public async Task<Reserva> ObterReservaPorIdAsync(int reservaId)

@@ -4,85 +4,72 @@ using Localdorateste.Models;
 using Localdorateste.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using RentCarSys.Application.DTO;
 using RentCarSys.Application.Interfaces;
 using RentCarSys.Enums;
 
 namespace RentCarSys.Application.Services
 {
-    [ApiController]
-    [Route("/veiculos")]
-    public class VeiculoService : ControllerBase
+    public class VeiculoService
     {
-        private readonly IVeiculosRepository _veiculosRepository;
+        private readonly IVeiculosRepository _repositorioVeiculos;
 
-        public VeiculoService(IVeiculosRepository veiculosRepository) 
+        public VeiculoService(IVeiculosRepository repositorioVeiculos)
         {
-            _veiculosRepository = veiculosRepository;
+            _repositorioVeiculos = repositorioVeiculos;
         }
 
-        [HttpGet("buscarTodos")]
-        public async Task<IActionResult> BuscarVeiculos()
+        public async Task<ResultViewModel<List<Veiculo>>> BuscarTodosVeiculos()
         {
             try
             {
-                var veiculos = await _veiculosRepository.ObterTodosVeiculosAsync();
-                return Ok(new ResultViewModel<List<Veiculo>>(veiculos));
-            }// Buscando todos os veiculos
+                var veiculos = await _repositorioVeiculos.ObterTodosVeiculosAsync();
+                return new ResultViewModel<List<Veiculo>>(veiculos);
+            }
             catch
             {
-                return StatusCode(500, value: new ResultViewModel<List<Veiculo>>(erro: "05X05 - Falha interna no servidor!"));
-            }// Tratando erros
-
+                return new ResultViewModel<List<Veiculo>>(erro: "05X05 - Falha interna no servidor!");
+            }
         }
-        
-        [HttpGet("buscarPorId/{veiculoid:int}")]
-        public async Task<IActionResult> BuscarVeiculoPorId(
-        [FromRoute] int veiculoid)
+
+        public async Task<ResultViewModel<Veiculo>> BuscarVeiculoPorId(int veiculoId)
         {
             try
             {
-                var veiculo = await _veiculosRepository.ObterVeiculoPorIdAsync(veiculoid);
+                var veiculo = await _repositorioVeiculos.ObterVeiculoPorIdAsync(veiculoId);
                 if (veiculo == null)
-                    return NotFound(new ResultViewModel<Veiculo>(erro: "Veiculo não encontrado, verifique se o veiculo já foi cadastrado!"));
-                // Validação do cliente
+                {
+                    return new ResultViewModel<Veiculo>(erro: "Veiculo não encontrado, verifique se o veiculo já foi cadastrado!");
+                }
 
-                return Ok(new ResultViewModel<Veiculo>(veiculo));
-            }// Buscando cliente no bancos
+                return new ResultViewModel<Veiculo>(veiculo);
+            }
             catch
             {
-                return StatusCode(500, value: new ResultViewModel<Veiculo>(erro: "Falha interna no servidor!"));
-            }// Tratando erros
-
+                return new ResultViewModel<Veiculo>(erro: "Falha interna no servidor!");
+            }
         }
 
-        [HttpGet("buscarPorPlaca/{placa}")]
-        public async Task<IActionResult> BuscarVeiculoPorPlaca(
-        [FromRoute] string placa)
+        public async Task<ResultViewModel<Veiculo>> BuscarVeiculoPorPlaca(string placa)
         {
             try
             {
-                var veiculo = await _veiculosRepository.ObterVeiculoPorPlacaAsync(placa);
+                var veiculo = await _repositorioVeiculos.ObterVeiculoPorPlacaAsync(placa);
                 if (veiculo == null)
-                    return NotFound(new ResultViewModel<Veiculo>(erro: "Veiculo não encontrado, verifique se a placa está correta!"));
-                // Validação do veiculo
+                {
+                    return new ResultViewModel<Veiculo>("Veiculo não encontrado, verifique se a placa está correta!");
+                }
 
-                return Ok(new ResultViewModel<Veiculo>(veiculo));
-            }// Buscando o veiculo no banco
+                return new ResultViewModel<Veiculo>(veiculo);
+            }
             catch
             {
-                return StatusCode(500, value: new ResultViewModel<Veiculo>(erro: "Falha interna no servidor!"));
-            }// tratanto erros
-
+                return new ResultViewModel<Veiculo>("Falha interna no servidor!");
+            }
         }
 
-        [HttpPost("cadastrar")]
-        public async Task<IActionResult> CriarVeiculo(
-        [FromBody] EditorVeiculoViewModel model)
+        public async Task<ResultViewModel<Veiculo>> CriarVeiculo(EditorVeiculoViewModel model)
         {
-            if (!ModelState.IsValid)
-                return BadRequest(error: new ResultViewModel<Veiculo>(ModelState.PegarErros()));
-            // Configuração de padronização de erro
-
             try
             {
                 var veiculo = new Veiculo
@@ -98,41 +85,31 @@ namespace RentCarSys.Application.Services
                     Automatico = model.Automatico
                 };
 
-                await _veiculosRepository.AdicionarVeiculoAsync(veiculo);                
+                await _repositorioVeiculos.AdicionarVeiculoAsync(veiculo);
 
-                return Created(uri: $"v1/veiculos/{veiculo.Id}", new ResultViewModel<Veiculo>(veiculo));
-            }// Criação do veiculo
-            catch (DbUpdateException ex)
-            {
-                return StatusCode(500, new ResultViewModel<Veiculo>(erro: "05XE8 - Não foi possível criar o veiculo!"));
-            }// Tratando erros
+                return new ResultViewModel<Veiculo>(veiculo);
+            }
             catch
             {
-                return StatusCode(500, new ResultViewModel<Veiculo>(erro: "05X10 - Falha interna no servidor!"));
-            }// Tratando erros
-
-
+                return new ResultViewModel<Veiculo>("05X10 - Falha interna no servidor!");
+            }
         }
 
-        [HttpPut("alterar/{veiculoid:int}")]
-        public async Task<IActionResult> EditarVeiculo(
-        [FromRoute] int veiculoid,
-        [FromBody] EditorVeiculoViewModel model)
+        public async Task<ResultViewModel<Veiculo>> EditarVeiculo(int veiculoId, EditorVeiculoViewModel model)
         {
-            if (!ModelState.IsValid)
-                return BadRequest(error: new ResultViewModel<Veiculo>(ModelState.PegarErros()));
-            // Configuração de padronização de erro
 
             try
             {
-                var veiculo = await _veiculosRepository.ObterVeiculoPorIdAsync(veiculoid);
+                var veiculo = await _repositorioVeiculos.ObterVeiculoPorIdAsync(veiculoId);
                 if (veiculo == null)
-                    return NotFound(new ResultViewModel<Veiculo>(erro: "Veiculo não encontrado!"));
-                // Validação do veiculo
+                {
+                    return new ResultViewModel<Veiculo>("Veiculo não encontrado!");
+                }
 
                 if (veiculo.Status == VeiculoStatus.Running)
-                    return NotFound(new ResultViewModel<Veiculo>(erro: "Não foi possivel alterar o veiculo, possui reserva em andamento"));
-                // Validação para saber se o veiculo já foi alugado
+                {
+                    return new ResultViewModel<Veiculo>("Não foi possível alterar o veiculo, possui reserva em andamento");
+                }
 
                 veiculo.Placa = model.Placa;
                 veiculo.Marca = model.Marca;
@@ -143,51 +120,39 @@ namespace RentCarSys.Application.Services
                 veiculo.Cor = model.Cor;
                 veiculo.Automatico = model.Automatico;
 
+                await _repositorioVeiculos.AtualizarVeiculoAsync(veiculo);
 
-                await _veiculosRepository.AtualizarVeiculoAsync(veiculo);                
-
-                return Ok(new ResultViewModel<Veiculo>(veiculo));
-                // Alteração do veiculo
+                return new ResultViewModel<Veiculo>(veiculo);
             }
-            catch (DbUpdateException ex)
+            catch
             {
-                return StatusCode(500, new ResultViewModel<Veiculo>(erro: "05XE8 - Não foi possível alterar o veiculo!"));
-            }// Tratando erros
-            catch (Exception ex)
-            {
-                return StatusCode(500, new ResultViewModel<Veiculo>(erro: "05X11 - Falha interna no servidor!"));
-            }// Tratando erros
-
+                return new ResultViewModel<Veiculo>("05X11 - Falha interna no servidor!");
+            }
         }
-                
-        [HttpDelete("excluir/{veiculoid:int}")]
-        public async Task<IActionResult> ExcluirVeiculo(
-        [FromRoute] int veiculoid)
+
+        public async Task<ResultViewModel<Veiculo>> ExcluirVeiculo(int veiculoId)
         {
             try
             {
-                var veiculo = await _veiculosRepository.ObterVeiculoPorIdAsync(veiculoid);
+                var veiculo = await _repositorioVeiculos.ObterVeiculoPorIdAsync(veiculoId);
                 if (veiculo == null)
-                    return NotFound(new ResultViewModel<Veiculo>(erro: "Veiculo não encontrado!"));
-                // Validação de veiculo
+                {
+                    return new ResultViewModel<Veiculo>("Veiculo não encontrado!");
+                }
 
-                if (veiculo.Status == VeiculoStatus.Offline)
-                    return NotFound(new ResultViewModel<Veiculo>(erro: "Não foi possivel excluir o veiculo, o veiculo está alugado!"));
-                // Validação para saber se o veiculo está disponivel.
+                if (veiculo.Status == VeiculoStatus.Running)
+                {
+                    return new ResultViewModel<Veiculo>("Não foi possível excluir o veiculo, possui reserva em andamento");
+                }
 
-                await _veiculosRepository.ExcluirVeiculoAsync(veiculo);                
+                await _repositorioVeiculos.ExcluirVeiculoAsync(veiculo);
 
-                return Ok(new ResultViewModel<Veiculo>(veiculo));
-                // Remoção do veiculo
+                return new ResultViewModel<Veiculo>(veiculo);
             }
-            catch (DbUpdateException ex)
+            catch
             {
-                return StatusCode(500, new ResultViewModel<Veiculo>(erro: "05XE7 - Não foi possível excluir o veiculo!"));
-            }// Tratando erros
-            catch (Exception ex)
-            {
-                return StatusCode(500, new ResultViewModel<Veiculo>(erro: "05X12 - Falha interna no servidor!"));
-            }// Tratando erros
+                return new ResultViewModel<Veiculo>("05X12 - Falha interna no servidor!");
+            }
         }
     }
 }

@@ -166,3 +166,11 @@ C:\Users\igorb\Documents\Projetos\Back-end\C#\Projetos\RentCarSys\RentCarSys.Tes
 C:\Users\igorb\Documents\Projetos\Back-end\C#\Projetos\RentCarSys\RentCarSys.Test\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
 C:\Users\igorb\Documents\Projetos\Back-end\C#\Projetos\RentCarSys\RentCarSys.Test\bin\Debug\net6.0\RentCarSys.Application.dll
 C:\Users\igorb\Documents\Projetos\Back-end\C#\Projetos\RentCarSys\RentCarSys.Test\bin\Debug\net6.0\RentCarSys.Application.pdb
+C:\Users\igorb\Documents\Projetos\Back-end\C#\Projetos\RentCarSys\RentCarSys.Test\bin\Debug\net6.0\System.Web.Mvc.dll
+C:\Users\igorb\Documents\Projetos\Back-end\C#\Projetos\RentCarSys\RentCarSys.Test\bin\Debug\net6.0\System.Web.Razor.dll
+C:\Users\igorb\Documents\Projetos\Back-end\C#\Projetos\RentCarSys\RentCarSys.Test\bin\Debug\net6.0\System.Web.Helpers.dll
+C:\Users\igorb\Documents\Projetos\Back-end\C#\Projetos\RentCarSys\RentCarSys.Test\bin\Debug\net6.0\System.Web.WebPages.Deployment.dll
+C:\Users\igorb\Documents\Projetos\Back-end\C#\Projetos\RentCarSys\RentCarSys.Test\bin\Debug\net6.0\System.Web.WebPages.Razor.dll
+C:\Users\igorb\Documents\Projetos\Back-end\C#\Projetos\RentCarSys\RentCarSys.Test\bin\Debug\net6.0\System.Web.WebPages.dll
+C:\Users\igorb\Documents\Projetos\Back-end\C#\Projetos\RentCarSys\RentCarSys.Test\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\igorb\Documents\Projetos\Back-end\C#\Projetos\RentCarSys\RentCarSys.Test\bin\Debug\net6.0\Microsoft.Web.Infrastructure.dll
