@@ -28,6 +28,8 @@ builder.Services.AddScoped<IVeiculosRepository, VeiculosRepository>();
 builder.Services.AddScoped<IReservasRepository, ReservasRepository>();
 builder.Services.AddScoped<ClienteService>();
 builder.Services.AddScoped<VeiculoService>();
+builder.Services.AddScoped<ReservaService>();
+
 
 
 builder.Services.AddEndpointsApiExplorer();
@@ -35,7 +37,7 @@ builder.Services.AddEndpointsApiExplorer();
 #region Swagger
 builder.Services.AddSwaggerGen(s =>
 {
-    s.SwaggerDoc("v1", new OpenApiInfo { Title = "Leafcutter Cloud", Version = "V1" });
+    s.SwaggerDoc("v1", new OpenApiInfo { Title = "RentCarSys", Version = "V1" });
     var securityScheme = new OpenApiSecurityScheme
     {
         Name = "Authorization",
