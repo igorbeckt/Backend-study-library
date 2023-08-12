@@ -24,7 +24,6 @@ Back-end/
 └── Projetos/
 ├── Calculator/
 ├── EditorHTML/
-├── RentCarSys/
 ├── Stopwatch/
 ├── TextEditor/
 └── ...
