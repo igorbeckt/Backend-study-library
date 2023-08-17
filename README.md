@@ -1,6 +1,6 @@
 <h1 align="center">Back-end</h1>
 
-Bem-vindo(a) a minha biblioteca pessoal! Aqui você encontrará aulas e projetos relacionados ao desenvolvimento de aplicações back-end.
+Bem-vindo(a) a minha biblioteca de estudos! Aqui você encontrará aulas e projetos relacionados ao desenvolvimento de aplicações back-end.
 
 ## Sobre
 
@@ -24,7 +24,6 @@ Back-end/
 └── Projetos/
 ├── Calculator/
 ├── EditorHTML/
-├── RentCarSys/
 ├── Stopwatch/
 ├── TextEditor/
 └── ...
